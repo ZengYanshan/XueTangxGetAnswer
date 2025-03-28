@@ -2,7 +2,7 @@
 from dataclasses import replace
 
 COOKIE = \
-    "_abfpc=45e0182901d28e785e4d95772015cc67ebae97f3_2.0; cna=c4ca863cc5cf6488466fc35c55869199; login_type=E; sessionid=47uwi27cu4visnwce78drw4co9qon05x; mode_type=normal; sensorsdata2015jssdkcross=%7B%22distinct_id%22%3A%2288644769%22%2C%22first_id%22%3A%22195515174c447b-0df325b71912c08-26011a51-921600-195515174c5669%22%2C%22props%22%3A%7B%22%24latest_traffic_source_type%22%3A%22%E7%9B%B4%E6%8E%A5%E6%B5%81%E9%87%8F%22%2C%22%24latest_search_keyword%22%3A%22%E6%9C%AA%E5%8F%96%E5%88%B0%E5%80%BC_%E7%9B%B4%E6%8E%A5%E6%89%93%E5%BC%80%22%2C%22%24latest_referrer%22%3A%22%22%7D%2C%22%24device_id%22%3A%22195515174c447b-0df325b71912c08-26011a51-921600-195515174c5669%22%7D; UM_distinctid=195517eccc47a8-0481b9b37a1e0a-296e4933-3d10d-195517eccc5cce; CNZZDATA1281406241=297351484-1740829019-https%253A%252F%252Fwww.xuetangx.com%252F%7C1742019406; provider=xuetang; django_language=zh; k=88644769; point={%22point_active%22:true%2C%22platform_task_active%22:true%2C%22learn_task_active%22:true}; JG_016f5b1907c3bc045f8f48de1_PV=1742021482543|1742022473457"
+    "_abfpc=45e0182901d28e785e4d95772015cc67ebae97f3_2.0; cna=c4ca863cc5cf6488466fc35c55869199; mode_type=normal; UM_distinctid=195517eccc47a8-0481b9b37a1e0a-296e4933-3d10d-195517eccc5cce; CNZZDATA1281406241=297351484-1740829019-https%253A%252F%252Fwww.xuetangx.com%252F%7C1742019406; provider=xuetang; django_language=zh; point={%22point_active%22:true%2C%22platform_task_active%22:true%2C%22learn_task_active%22:true}; login_type=E; csrftoken=x1kp5qCYDIs1NqVSDdGD4p4oCB4CRhGL; sessionid=3ok86fvnyz2m4iak4qmtvyykj50b7xqp; k=88644769; sensorsdata2015jssdkcross=%7B%22distinct_id%22%3A%2288644769%22%2C%22first_id%22%3A%22195515174c447b-0df325b71912c08-26011a51-921600-195515174c5669%22%2C%22props%22%3A%7B%22%24latest_traffic_source_type%22%3A%22%E7%9B%B4%E6%8E%A5%E6%B5%81%E9%87%8F%22%2C%22%24latest_search_keyword%22%3A%22%E6%9C%AA%E5%8F%96%E5%88%B0%E5%80%BC_%E7%9B%B4%E6%8E%A5%E6%89%93%E5%BC%80%22%2C%22%24latest_referrer%22%3A%22%22%7D%2C%22%24device_id%22%3A%22195515174c447b-0df325b71912c08-26011a51-921600-195515174c5669%22%7D; JG_016f5b1907c3bc045f8f48de1_PV=1743158870910|1743158926020"
 HOMEWORK_URL = \
     "https://www.xuetangx.com/h5/homework/bitP0854KC007977/23901367/58564584?avatar=https%3A%2F%2Fstoragecdn.xuetangx.com%2Fpublic_assets%2Fxuetangx%2Fimages%2Fb6ce32912ffa1c5959b0da6ceb9ce27e.avatar%402x.png&name=&user_number=null&term=latest&university_id=0&user_role=null&sessionid=null&csrftoken=undefined&xtbz=xt&django-language=zh"
 
@@ -11,6 +11,9 @@ import requests
 import re
 
 def escape_for_markdown(str):
+    str = str.replace('&nbsp;', ' ')
+    str = re.sub(r'<[^>]+>', '', str)
+
     special_characters = r'\*_{}`[]()#+-.!|'
     for char in special_characters:
         str = str.replace(char, fr'\{char}')
