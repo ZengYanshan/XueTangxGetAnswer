@@ -30,8 +30,6 @@ Python 实现学堂在线答案爬取
 
 1. 在手机模式下，打开课程中任一作业页面
 
-例：
-
 ![2-1](images/2-1.jpg)
 
 2. 复制链接，填写到 `main.py` 的 `HOMEWORK_URL` 中
@@ -52,7 +50,9 @@ EID: 58564584
 
 ##### 三、运行
 
-修改完 `main.py` 开头的 `COOKIE` `HOMEWORK_URL` 后，运行 `main.py`
+修改完 `main.py` 开头的 `COOKIE` `HOMEWORK_URL` 后，运行 `main.py`，在项目路径下得到一份 `[课程名].md` 文件。
+
+例：[信息检索与科技写作.md](信息检索与科技写作.md)
 
 
 
