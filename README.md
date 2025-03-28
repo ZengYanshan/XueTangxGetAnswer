@@ -1,6 +1,6 @@
 # XueTangxGetAnswer
 
-Python 实现学堂在线答案爬取
+Python 实现学堂在线答案爬取，需先用一个账号完成一次答题
 
 ### 使用教程
 
